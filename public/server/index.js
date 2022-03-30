@@ -52,7 +52,7 @@
     app.use('/api/aspirante', aspiranteRouter);
     app.use('/api/solicitud', solicitudRouter);
     app.use('/', function(req, res){
-        res.json('Inventario')
+        res.json('Fundacion Patitas')
     });
 
     app.use(cookieParser());

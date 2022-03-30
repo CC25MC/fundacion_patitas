@@ -1,6 +1,6 @@
 {
   "name": "fundacion_patitas",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "main": "public/main.js",
   "description": "Fundación Patitas",
   "author": "Cesar Casadiego y Osdalys Gomez",
@@ -67,15 +67,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Duoloon/DuoSimple"
+    "url": "git+https://github.com/CC25MC/fundacion_patitas"
   },
   "bugs": {
-    "url": "https://github.com/Duoloon/DuoSimple/issues"
+    "url": "https://github.com/CC25MC/fundacion_patitas/issues"
   },
   "homepage": "./",
   "build": {
-    "appId": "com.github.Duoloon.DuoSimple",
-    "productName": "DuoSimple",
+    "appId": "com.github.CC25MC.fundacion_patitas",
+    "productName": "Fundacion Patitas",
     "mac": {
       "category": "your.app.category.type"
     },

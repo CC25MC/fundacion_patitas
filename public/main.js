@@ -1,5 +1,4 @@
-const { app, BrowserWindow, Menu, ipcMain } = require('electron')
-const { autoUpdater } = require('electron-updater')
+const { app, BrowserWindow, Menu, } = require('electron')
 const path = require('path')
 const isDev = require('electron-is-dev')
 const WindowStateManager = require('electron-window-state-manager')
@@ -69,7 +68,6 @@ function createWindow() {
 
 app.on('ready', () => {
   createWindow()
-  autoUpdater.checkForUpdatesAndNotify()
 
   if (mainWindowState.maximized) {
     win.maximize()
@@ -96,33 +94,4 @@ app.on('activate', function () {
   if (BrowserWindow.getAllWindows().length === 0) createWindow()
 })
 
-autoUpdater.on('checking-for-update', () => {
-  sendStatusToWindow('message', 'Verificando Actualización...')
-})
-autoUpdater.on('update-available', info => {
-  sendStatusToWindow('message', 'Actualización Disponible.')
-})
-autoUpdater.on('update-not-available', info => {
-  sendStatusToWindow('message', 'No hay Actualizaciones')
-})
-autoUpdater.on('error', err => {
-  sendStatusToWindow(
-    'message',
-    'Ah Ocurrido un error al descargar la actualización' + err
-  )
-})
-autoUpdater.on('download-progress', progressObj => {
-  win.webContents.send('progressbar', progressObj.percent)
-})
-autoUpdater.on('update-downloaded', info => {
-  sendStatusToWindow('message', 'Actualización Descargada')
-})
-
-ipcMain.on('restart_app', (event, arg) => {
-  autoUpdater.quitAndInstall()
-})
-
-ipcMain.on('update_app', (event, arg) => {
-  autoUpdater.checkForUpdates()
-})
 const server = require('./server')
