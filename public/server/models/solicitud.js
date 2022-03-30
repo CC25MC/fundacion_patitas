@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize')
 const { sequelize } = require('../database/index')
-const Vacuna = require('../models/vacuna')
+const Animales = require('../models/animales')
 const Trabajador = require('../models/trabajador')
 const Visita = require('../models/visita')
 const Aspirante = require('../models/aspirante')
@@ -15,11 +15,11 @@ Solicitud.init(
     modelName: 'Solicitud'
   }
 )
-Vacuna.hasOne(Solicitud)
+Animales.hasOne(Solicitud)
 Trabajador.hasOne(Solicitud)
 Visita.hasOne(Solicitud)
 Aspirante.hasOne(Solicitud)
-Solicitud.belongsTo(Vacuna)
+Solicitud.belongsTo(Animales)
 Solicitud.belongsTo(Trabajador)
 Solicitud.belongsTo(Visita)
 Solicitud.belongsTo(Aspirante)

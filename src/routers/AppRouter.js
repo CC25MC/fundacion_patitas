@@ -6,6 +6,7 @@ const TrabajadorScreen = lazy(() => import('../screens/TrabajadorScreen'))
 const AnimalScreen = lazy(() => import('../screens/AnimalScreen'))
 const AspiranteScreen = lazy(() => import('../screens/AspiranteScreen'))
 const VisitaScreen = lazy(() => import('../screens/VisitaScreen'))
+const SolicitudScreen = lazy(() => import('../screens/SolicitudScreen'))
 
 export const AppRouter = () => {
   const { path } = useLocation()
@@ -22,6 +23,8 @@ export const AppRouter = () => {
         <Route path="/aspirante/create" element={<AspiranteScreen />} />
         <Route path="/visita" element={<VisitaScreen />} />
         <Route path="/visita/create" element={<VisitaScreen />} />
+        <Route path="/solicitud" element={<SolicitudScreen />} />
+        <Route path="/solicitud/create" element={<SolicitudScreen />} />
       </Routes>
     </Router>
   )

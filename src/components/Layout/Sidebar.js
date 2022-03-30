@@ -10,7 +10,14 @@ import MenuIcon from '@mui/icons-material/Menu'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import { Medication, Work, Pets, EmojiPeople, AssignmentInd } from '@mui/icons-material'
+import {
+  Medication,
+  Work,
+  Pets,
+  EmojiPeople,
+  AssignmentInd,
+  AddBox
+} from '@mui/icons-material'
 import { useLocation } from '../../Hooks'
 
 const drawerWidth = 240
@@ -67,6 +74,11 @@ const Drawer = styled(MuiDrawer, {
 }))
 
 const items = [
+  {
+    title: 'Solicitud',
+    icon: <AddBox />,
+    link: '/solicitud'
+  },
   {
     title: 'Animales',
     icon: <Pets />,

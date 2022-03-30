@@ -2,7 +2,7 @@ const Solicitud = require('../models/solicitud')
 
 const list = async (req, res) => {
   const response = await Solicitud.findAll({
-    include: ['Aspirante', 'Trabajador', 'Animal', 'Visita']
+    include: ['Aspirante', 'Trabajador', 'Visitum', "Animale"]
   })
     .then(function (data) {
       const res = { success: true, data: data }
@@ -20,8 +20,8 @@ const create = async (req, res) => {
     const response = await Solicitud.create({
       tiempo: req.body.tiempo,
       AspiranteId: req.body.AspiranteId,
-      AnimalId: req.body.AnimalId,
-      VisitaId: req.body.VisitaId,
+      AnimaleId: req.body.AnimalId,
+      VisitumId: req.body.VisitaId,
       TrabajadorId: req.body.TrabajadorId
     })
       .then(function (data) {
